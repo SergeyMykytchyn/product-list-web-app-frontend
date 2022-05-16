@@ -1,33 +1,15 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useDispatch } from 'react-redux';
-import { addProduct } from "../../store/productsReducer";
-import "./HeaderGroups.css";
 import { Add } from "@mui/icons-material";
 import TextField from "@mui/material/TextField";
+import { addProduct } from "../../store/productsReducer";
+import "./Header.css";
 import Dialog from "../dialog/Dialog";
 import Api from "../../api/Api";
+import { useOutsideAlerter } from "../../utils/customHooks";
 
-const useOutsideAlerter = (ref, handleClose) => {
-  useEffect(() => {
-    /**
-     * Alert if clicked on outside of element
-     */
-    function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        handleClose();
-      }
-    }
-    // Bind the event listener
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [ref]);
-};
-
-const HeaderGroups = ({ title, displayAdd, profile }) => {
-  const dispatch = useDispatch()
+const HeaderGroups = ({ title, displayAdd }) => {
+  const dispatch = useDispatch();
 
   const [toggleAdd, setToggleAdd] = useState(false);
   const [toggleCreate, setToggleCreate] = useState(false);

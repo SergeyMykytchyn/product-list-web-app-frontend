@@ -1,0 +1,102 @@
+.product-card {
+  display: inline-block;
+  flex-direction: column;
+
+  border-radius: 8px;
+  background-color: #ffff;
+
+  overflow: visible;
+
+  position: relative;
+}
+
+.product-card:hover {
+  box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.25),
+    0px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.product-card-Header {
+  position: relative;
+
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  border-radius: 8px 8px 0 0;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.product-card-Content {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px 20px 18px 20px;
+}
+
+.product-card-ContentName {
+  text-align: left;
+  width: 170px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+
+  margin-bottom: 3px;
+}
+
+.moreVert {
+  margin-right: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.toggleMoreVert {
+  z-index: 1000;
+  position: absolute;
+  top: 38px;
+  right: -10px;
+  background-color: #ffff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 112px;
+  max-height: 208px;
+}
+
+.toggleMoreVertButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  line-height: 18px;
+
+  height: 48px;
+}
+
+.toggleMoreVertButton:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.product-card-link {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 37px;
+  margin-top: 37px;
+}

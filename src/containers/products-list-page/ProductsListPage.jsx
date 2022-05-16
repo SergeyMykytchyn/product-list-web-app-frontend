@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { setProducts } from "../../store/productsReducer";
 import Header from "../../components/header/Header";
-// import ProductsGrid from "../../components/products-grid/ProductsGrid";
+import ProductsGrid from "../../components/products-grid/ProductsGrid";
 import Api from "../../api/Api";
 
 const ProductsListPage = () => {
@@ -23,8 +23,8 @@ const ProductsListPage = () => {
 
   return (
     <>
-      <Header displayAdd={true} profile={false} title="Products list" />
-      {/* <ProductsGrid /> */}
+      <Header displayAdd={true} title="Products list" />
+      <ProductsGrid />
     </>
   );
 };

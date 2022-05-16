@@ -1,25 +1,6 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import "./Dialog.css";
-
-const useOutsideAlerter = (ref, handleClose) => {
-  useEffect(() => {
-    /**
-     * Alert if clicked on outside of element
-     */
-    function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        // alert("You clicked outside of me!");
-        handleClose();
-      }
-    }
-    // Bind the event listener
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [ref]);
-};
+import { useOutsideAlerter } from "../../utils/customHooks";
 
 const Dialog = ({ children, handleClose, width }) => {
   const wrapperRef = useRef(null);
